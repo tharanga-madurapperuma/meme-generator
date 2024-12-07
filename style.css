@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+body{
+    background-color: rgb(33, 32, 44);
+}
+
+.meme-generator{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: rgb(33, 32, 44);
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.meme-generator h1{
+    color: rgb(109, 74, 255);
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+.section__generate{
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+.generate_wrapper{
+    display: flex;
+    width: 80%;
+}
+
+.wrapper-topics{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    color: rgb(211, 201, 225);
+    justify-content: space-evenly;
+}
+
+.wrapper-inputField{
+    display: flex;
+    width: 80%;
+}
+
+.wrapper-inputFields form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: end;
+}
+
+.wrapper-inputFields form input{
+    width: 1000px;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.wrapper-inputFields form button{
+    width: 100px;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(109, 74, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.wrapper-inputFields form input:focus{
+    border: 0 0 10px rgb(109, 74, 255);
+}
+
+.wrapper-inputFields form input::placeholder{
+    color: rgb(120, 120, 120);
+    font-weight: 500;
+}
+
+.section__display{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100%;
+    height: max-content;
+}
+
+.display_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(57, 56, 71);
+    width: 80%;
+    height: 100%;
+    padding: 20px 0 20px 0;
+}
+
+.container-memes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    margin: 20px;
+}
+
+.container-memes img{
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+}
+
+.top-text, 
+.bottom-text {
+    text-align: center;
+    color: white;
+    position: absolute;
+    font-family: "anton";
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, 2px -2px 5px black, -2px 2px 5px black;
+}
+
+.top-text{
+    top: 10px;
+    z-index: 2;
+}
+
+.bottom-text{
+    bottom: 10px;
+    z-index: 2;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.cross{
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    color: white;
+    font-size: 8rem;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 4;
+    transition: 0.5s;
+}
+
+/* DELETE IMAGE */
+.container-memes .overlay:hover{
+    opacity:0.5;
+}
+
+.container-memes .overlay:hover ~ .cross {
+    opacity: 0.5; /* Fully visible on hover */
+}
